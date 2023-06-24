@@ -1,0 +1,147 @@
+﻿@model FeatureViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form role="form" id="fieldForm" class="form">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Feature Name</label>
+                <input type="text" id="featureName" asp-for="FeatureName" class="form-control" placeholder="Feature Name">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Feature Display Name</label>
+                <input type="text" id="featureDisplayName" asp-for="FeatureDisplayName" class="form-control" placeholder="Feature Display Name">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Project Area</label>
+                <select class="form-control" id="projectArea" asp-items="Html.GetEnumSelectList<ProjectArea>()">
+                    <option selected disabled value="@null">Area</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Waive Maker Checker</label>
+                <input type="checkbox" id="waiveMakerChecker">
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="card" style="margin-top:3%;">
+    <div class="card-header">
+                            <form role="form" id="fieldForm" class="form">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Field Name</label>
+                <input type="text" id="fieldName" class="form-control" placeholder="Field Name">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Display Name</label>
+                <input type="text" id="displayName" class="form-control" placeholder="Display Name">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Data Type</label>
+                <select class="form-control" id="dataType" asp-items="Html.GetEnumSelectList<DataType>()">
+                    <option selected disabled value="@null">Data Type</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Value Source</label>
+                <select class="form-control" id="valueSource" onchange="CheckSource()" asp-items="Html.GetEnumSelectList<ValueSource>()">
+                    <option selected disabled value="@null">Value Source</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" id="lookUp" style="display: none;">
+            <div class="form-group">
+                <label>LookUp Code</label>
+                <select class="form-control" id="lookUpCodeId" asp-items="Html.GetEnumSelectList<LookUpCodeId>()">
+                    <option selected disabled value="@null">Select Lookup code Id</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3" id="sFeature" style="display: none;">
+            <div class="form-group">
+                <label>Source Feature</label>
+                <select class="form-control" id="sourceFeature" >
+                    <option selected disabled value="@null">Select Source Feature</option>
+                     @foreach (var (feature, index) in Model!.FeatureNameList!.WithIndex())
+                    {
+                        <option value=@feature>@feature</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Show On Grid</label>
+                <input type="checkbox" id="showOnGrid">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Show on detail screen</label>
+                <input type="Checkbox" id="showOnDetailScreen">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Hidden</label>
+                <input type="checkbox" id="hidden">
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-info" style="float:right" value="Submit" onclick="AddField(false)">
+        <span id="sbtText">Add field</span>
+    </button>
+</form>
+                        </div>
+    <div class="card-content">
+
+<table class=" table table-striped table-borderless">
+    <thead>
+        <tr>
+            <th>Select</th>
+            <th>Field Name</th>
+            <th>Display Name</th>
+            <th>Data Type</th>
+            <th>Value source</th>
+            <th>Show on Grid</th>
+            <th>Show on detail screen</th>
+            <th>Hidden</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+<button type="button" class="delete-row" style="margin-left:30px">Delete Row</button>
+
+<button id="btnDeactivate" type="button" class="btn btn-primary" style="float:right; margin-right:30px;" onclick="SubmitFeature()">
+    <div id="btnApproveLoader" style="display: none;" class="spinner-cust"><div class="double-bounce1 bg-white"></div><div class="double-bounce2 bg-white"></div></div>
+    <span id="btnDeactivateText">Generate</span>
+</button>
+
+</div>
+</div>
+@section Scripts{
+<script src="~/js/home.js" asp-append-version="true"></script>
+}

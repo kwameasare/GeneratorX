@@ -1,0 +1,51 @@
+﻿@model List<FeatureViewModel>
+
+<div class="table-responsive pt-3">
+    <div class="card-content">
+        <div style="padding: 30px;">
+            <a class="float-right" href="javascript:void(0)" style="cursor: pointer" onclick="AddFeature()">
+                <i id="addLoader" style="display: none" class="la la-spinner spinner cust-spinner"></i>
+                <i id="addIcon" class="la la-plus"></i>
+            </a>
+        </div>
+        <table id="newGrid" class=" table table-striped table-borderless zero-configuration">
+            <thead>
+                <tr>
+                    <th>Feature Display Name</th>
+                    <th>Feature</th>
+                    <th>Area</th>
+                    <th width="15%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var (feature, index) in Model.WithIndex())
+                {
+                    <tr>
+                        <td>@feature.FeatureDisplayName</td>
+                        <td>@feature.FeatureName</td>
+                        <td>@feature.ProjectArea</td>
+                        <td>
+                            <div class="actions" id="action-@index">
+                                
+                                <div class="icon" data-tooltip="Delete Record" data-tooltip-location="left">
+                                    <i id="deleteLoader-@index" style="display: none" class="la la-spinner spinner cust-spinner"></i>
+                                    <i id="deleteIcon-@index" onclick="DeleteFeature( @index)" class="fa fa-trash-o"></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="modal-footer">
+    
+    <button type="button" class="btn btn-info" value="Submit" onclick="SubmitProject()">
+        <i id="sbtLoader" style="display: none" class="la la-spinner spinner cust-spinner"></i>
+        <span id="sbtText">Submit</span>
+    </button>
+</div>
+    </div>
+
+
+
+</div> 

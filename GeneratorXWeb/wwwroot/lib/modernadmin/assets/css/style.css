@@ -1,0 +1,321 @@
+/*
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+/*--- Login screen backgroung image ---*/
+html body.bg-full-screen-image-student {
+    background: url(../../app-assets/images/backgrounds/) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-card{
+    background-color: rgba(255, 255, 255, 0.77) !important;
+    color: black !important;
+}
+
+.login-card2 {
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: black !important;
+}
+
+.line-on-side {
+    border-bottom: 1px solid rgba(77, 77, 77, 0.2) !important;
+    line-height: 1.1em;
+}
+
+.forgotPwd {
+    color: #002bff;
+}
+
+.my-dark-control {
+    border: 1px solid #5a5d69 !important;
+}
+
+
+/*--- Applicant Area Layout Nav bar repositioning ---*/
+.applicantNavBar {
+    position: relative;
+    left: 30%;
+}
+
+/*--- Select2 library color change ---*/
+.select2-container--classic .select2-results__options .select2-results__option[aria-selected=true], .select2-container--default .select2-results__options .select2-results__option[aria-selected=true] {
+    background-color: #96c052 !important;
+    color: #FFFFFF !important;
+}
+
+.loader-primary.ball-clip-rotate div {
+    border-color: #96c052 !important;
+    border-bottom-color: transparent !important;
+    background-color: transparent !important;
+}
+
+/*--- Embedded Overlay Loader ---*/
+.content {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    border-radius: 6px;
+    background-color: rgba(24,26,27,0.5);
+    cursor: wait;
+}
+
+.overlay-content {
+    position: absolute;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #555;
+}
+
+/*-----------------------------*/
+/*---Status Progress Classes---*/
+/*-----------------------------*/
+
+fieldset {
+    border: 1px solid #ddd !important;
+    margin: 0 !important;
+    min-width: 0;
+    padding: 10px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    padding-left: 10px !important;
+}
+
+legend {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    width: 35%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 5px 5px 10px;
+    background-color: #ffffff;
+}
+
+.legend-right {
+    position: absolute;
+    top: -2.2em;
+    right: 20px;
+    background: #fff;
+    line-height: 1.2em;
+}
+
+.legend-left {
+    position: absolute;
+    top: -2.2em;
+    left: 520px;
+    background: #fff;
+    line-height: 1.2em;
+}
+
+/*-----------------------------*/
+/*--------Color Theme--------*/
+/*-----------------------------*/
+
+/*menu text color*/
+.bg-nav-back {
+    /*background: url(../../../../images/nav-background.png);*/
+    /*background-size: cover;*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-menu.menu-dark .navigation li a {
+    color: white;
+    transition: all 0.2s ease;
+}
+
+
+/*form-elements-theme*/
+.btn-info {
+    border-color: #6c9b1f !important;
+    background-color: #96c052 !important;
+    color: #FFFFFF;
+}
+
+.btn-info:focus, .btn-info:active, .btn-info:hover {
+    border-color: #6c9b1f !important;
+    background-color: #466b0a !important;
+    color: #FFFF !important;
+}
+
+.btn-outline-info {
+    border-color: #96c052;
+    background-color: transparent;
+    color: #96c052;
+}
+
+    .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info:hover {
+        border-color: #6c9b1f !important;
+        background-color: #466b0a !important;
+        color: #FFFF !important;
+    }
+
+.btn-outline-blue {
+    border-color: #96c052;
+    background-color: transparent;
+    color: #96c052;
+    cursor: default !important;
+}
+
+    .btn-outline-blue:hover, .btn-outline-blue:focus, .btn-outline-blue:active {
+        border-color: #96c052;
+        background-color: transparent;
+        color: #96c052 !important;
+        cursor: default !important;
+    }
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    border-color: #6c9b1f !important;
+    background-color: #96c052 !important;
+    color: #FFFFFF;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #96c052;
+    border-color: #96c052;
+}
+
+.page-link:hover {
+    background-color: #466b0a;
+    border-color: #6c9b1f;
+}
+
+.form-control:focus {
+    color: #4E5154;
+    border-color: #96c052;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #96c052;
+}
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-color: #96c052 !important;
+    background-image: none !important;
+    color: -internal-light-dark(black, white) !important;
+}
+
+/*form-elements-ends*/
+
+/*primary color*/
+.main-menu.menu-dark {
+    background: #082032;
+    color: white;
+}
+
+    .main-menu.menu-dark .navigation {
+        background: #96c052;
+    }
+
+/*dark primary color*/
+        .main-menu.menu-dark .navigation > li.open > a {
+            background: #283e2e;
+            border-right: 4px solid #6c9b1f;
+        }
+
+        .main-menu.menu-dark .navigation > li > ul {
+            background: #96c052;
+        }
+
+/*darker primary color*/
+        .main-menu.menu-dark .navigation > li .active > a {
+            background: #283e2e;
+        }
+
+        .main-menu.menu-dark .navigation > li.active > a {
+            background: #1e2f23;
+        }
+
+    .main-menu.menu-dark ul.menu-popout {
+        background: #96c052;
+    }
+
+.navbar-semi-dark .navbar-header {
+    background: #96c052;
+}
+.modal-header {
+    background: #6c9b1f;
+}
+
+/*-----------------------------*/
+/*--------Color Theme--------*/
+
+
+
+.las {
+    color: rgb(146, 209, 20);
+    float: right;
+    font-size: 30px;
+    margin: 0 0 5px 5px;
+    border-radius: 5rem;
+}
+
+    .las:hover {
+        color: black;
+    }
+
+.la-plus {
+    text-align: center;
+}
+
+.la-trash {
+    color: red;
+}
+
+.header-navbar {
+    background-color: #16ca16 !important;
+}
+
+.badge {
+    background-color: rgb(25, 220, 25) !important;
+}
+
+.content-body {
+    height: 70vh !important;
+    background: url('../images/axis-images/images/34.png') no-repeat center center;
+    background-size: 300px;
+    display: block;
+    position: relative;
+}
+
+/*#sec_issuers_tbl thead {
+    font-size: 12px;
+}*/
+
+/*#sec_issuers_tbl tbody {
+    font-size: 12px;
+}*/
+
+.navbar-brand {
+    display: inline;
+}
+
+img.brand-logo {
+    position: relative;
+    top: -5px;
+    width: 30% !important;
+}
+
+.main-menu, .card {
+    border: 1px solid rgba(25, 220, 25, 0.63) !important;
+}
+

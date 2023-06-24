@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Project";
+}
+
+<div class="app-content content">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-0 breadcrumb-new">
+                <h3 class="content-header-title mb-0 d-inline-block">Project</h3>
+                <div class="row breadcrumbs-top d-inline-block">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">
+                                Project
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <!-- Content section start -->
+            <form role="form" id="fieldForm" class="form">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Project Name</label>
+                            <input type="text" id="projectName" class="form-control" placeholder="Project Name">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Project Display Name</label>
+                            <input type="text" id="projectDisplayName" class="form-control" placeholder="Project Display Name">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Implements Maker-Checker</label>
+                            <input type="checkbox" id="hasMakerChecker">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+                    <div class="card">
+                        <div id="dataTable" class="card-content">
+                        </div>
+
+                    </div>
+                
+            <!-- // Content section end -->
+        </div>
+    
+</div>
+
+
+<!-- Modal start-->
+<partial name="_ModalPartialfull" />
+<partial name="_ModalPartial" />
+
+@section Scripts{
+<script src="~/js/home.js" asp-append-version="true"></script>
+}
